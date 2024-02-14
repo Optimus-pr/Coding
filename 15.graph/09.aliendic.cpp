@@ -1,0 +1,3 @@
+//find for this in gfg it is same toposort problem but is twisted bit first we need to compare string with nxt string and find the mismatch if we find a missmatch then we need to add edje between those 2 i.e if baa and abcd were there then b->a is added which implies b comes before a in dictionary
+
+//after doing this for all pair we can use toposort instead of letters convert them into numbers and add edjes

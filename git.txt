@@ -1,0 +1,127 @@
+*)git init is a command used to create a new Git repository in an empty directory or to initialize an existing directory as a Git repository. When you run git init, Git creates a new subdirectory called .git in the current working directory. This subdirectory contains all of the necessary files for Git to manage the repository, including the object database, the index, and the configuration files.
+
+Once git init has been run, you can start adding files to the repository, making commits, and using Git to track changes to your project. git init is typically one of the first commands that you would run when setting up a new project with Git.
+
+
+*)The staging area, also known as the "index", is a feature of Git that allows you to prepare changes for a commit. When you make changes to files in your Git repository, those changes are initially only made to your working directory - they are not yet tracked by Git. In order to commit those changes and add them to the repository, you need to first stage them using the staging area.
+
+
+*)git add is a command in Git that adds changes to the staging area. It is used to track changes to files and prepare them for committing. When you make changes to a file in your working directory, those changes are not automatically tracked by Git. You need to explicitly tell Git which changes to include in your next commit by using the git add command.
+
+There are two primary ways to use git add:
+
+git add <file>: This command adds the specified file to the staging area. For example, git add myfile.txt would add the file myfile.txt to the staging area.
+
+git add . or git add --all: These commands add all changes in the current directory to the staging area. This includes changes to existing files as well as any new files that have been created.
+
+Once you have added changes to the staging area using git add, you can review the changes using git status. If you are satisfied with the changes, you can commit them to the repository using git commit. If you need to make further modifications to the changes, you can use git add again to update the staging area before committing.
+
+The staging area acts as an intermediary step between your working directory and the commit history. It allows you to select which changes you want to include in your next commit, while leaving out any changes that you do not want to commit. When you add files to the staging area, Git takes a snapshot of those files and stores them in a temporary area. You can then review the changes in the staging area and make any necessary modifications before committing them to the repository.
+
+Using the staging area is an important part of the Git workflow, as it allows you to carefully review and prepare your changes before committing them. It also gives you more fine-grained control over the content of your commits, allowing you to commit changes in smaller, more manageable chunks.
+
+
+*)n Git, a repository is a collection of files and folders, along with the version history and metadata related to those files. It is a central location where developers can collaborate on a project and track changes to its files over time.
+
+When you create a Git repository, Git stores all of the files and folders in a directory on your local machine. It also creates a hidden directory called .git that contains the version history and other metadata related to the files. This metadata includes information about who made changes to the files, when those changes were made, and what the changes were.
+
+By using a Git repository, developers can track changes to their code over time, collaborate with others on the same project, and easily revert to previous versions of their code if necessary. Git repositories can be hosted on a variety of platforms, including GitHub, GitLab, and Bitbucket, making it easy for developers to share their code and collaborate with others around the world.
+
+*)Git hosting service like GitHub, GitLab, or Bitbucket
+
+*)
+git log is a command in Git that displays the commit history of a repository. It shows a list of all the commits that have been made to the repository, along with information about each commit such as the author, date, and commit message.
+
+By default, git log displays the commits in reverse chronological order, with the most recent commit at the top of the list. Each commit is identified by a unique hash value, which can be used to reference the commit in other Git commands.
+
+git log can be customized with a variety of options to display additional information about the commit history. Some common options include:
+
+--oneline: Displays each commit on a single line, with the hash value and commit message.
+
+--graph: Displays a text-based graph of the commit history, showing how different branches have diverged and merged.
+
+--author: Filters the commit history to show only commits made by a specific author.
+
+--since or --until: Filters the commit history to show only commits made within a specific time range.
+
+*)undoing things:- 
+
+		->using 'git checkout gitid'
+			what it does is to check what was the state of the file at some stage just for viewing purpose we cannot modify after using checkout we can use 'git checkout master'
+
+		->using 'git revert gitid'
+			If you have committed changes to a file but want to undo those changes, you can use the command git revert <commit>. This will create a new commit that undoes the changes made in the specified commit."The rest of the commited files above are untouched"
+
+		->using 'git reset gitid'
+			If we want to go to particular commit but we want the changes made after to hang around then we can use this i.e we won't find anything in git log but the changes will be preserved it is helpful when we want to put all the changes in one file and proceed
+
+			if we don't want to preserve the changes then we can use --hard flag
+			"The rest of the commited files above will be removed this is the diff between revert which only undos one file but this will remove all the commited files above the specified one"
+
+*)Branching:-
+	 
+	Master is stable and tested version of the code and if want to make any changes to the master it is better to create a seperate branch and experiment the nesecery changes if it's go to go then we can merge that branch in to master if not we can simply delete that branch
+	i.e branching will provide us a isolated environment where we can perform any changes to the existing stable version of the code ,it is also helpful when we want 2 persons to work on a existing project and later we need to merge them 
+
+	->git branch <branchname>:-this creates a seperate branch but we will be in master only so
+	->git checkout <bracnhname>:- to navigate to seperate branch we can use this 
+	->git checkout -b <branchname>:- the above 2 tasks are combined here 
+
+	->git branch -D <branchname> :- to delete a branch
+
+	->git conflict:-Git conflicts occur when two or more people make changes to the same file or section of code, and Git is unable to automatically merge the changes together. When this happens, Git will stop the merge process and ask you to resolve the conflicts manually.
+
+
+	To resolve Git conflicts, you will need to follow these steps:
+
+	Identify the conflicting files: You can use the git status command to see which files have conflicts.
+	
+	Open the conflicting file(s) in a text editor and look for the conflict markers: The conflict markers look like this:
+
+	<<<<<<< HEAD
+	Code from the current branch
+	=======
+	Code from the incoming branch
+	>>>>>>> incoming-branch
+
+
+	The HEAD marker indicates the code from the current branch, while the incoming-branch marker indicates the code from the incoming branch.
+
+	Edit the conflicting code: Decide which code you want to keep, and delete the conflicting code and the conflict markers.
+	
+	Add the changes to the staging area: Once you have resolved the conflicts, you need to stage the changes using the git add command.
+	
+	Commit the changes: Finally, you can commit the changes using the git 	commit command.
+
+
+							Github
+
+	*)GitHub is a web-based platform that provides a hosting service for Git repositories. It allows users to store and manage their code repositories, collaborate with other developers, and track changes to their code.
+
+	*)central online repository which multiple team-members could access
+
+
+	*)we can go to github website and press on new to create a new repository then we can copy the connection string then in terminal in the current git initialized repository in the master branch we can exe "git push <connection string> master" what this does is it takes all the local files and hosts it remotely in the github's repo
+
+	if we wan't to add some more files then again we need to follow the same process of push but instead of copying the connections string each time we can create an alias corresponding to the connection string and it can be done as 
+	"git remote add origin <connection string>"
+	now we can simply do
+	"git push origin master" where origin is an alias 
+
+	the above method is used if we already have a local repo and in future if we decide to put it remotely
+
+
+	*)but now this approach can be used if there is no local repo and we are creating and updating to github simul
+
+		for this what we can do is same as above create new repo in github ->clone or download-> copy-> then git clone <connection string> -> cd to the remote repo's foldername in terminal
+
+		then same i.e create file add to staging area then commit it ,then to push it to remote repo there is no need to set alias as origin already alias named origin is set for us so we can use it directly
+
+
+							Collaborating on Github
+
+Assume there are 4 people who are working on a project and one among them is manager if you are assingned a piece of work instead of making changes to the others work what we can do is pull the current work from master to local storage i.e "git pull origin master" so that we are not modifying the other work then create and add a branch to master then push it i.e "git push origing <branch name>" instead of merging so that others can review and if everyone agrees to that then manager can merge it, after pushing we can click on compare and pull request
+
+Git clone copies all files to the local machine, while git pull only copies the modified files to the local machine. Git clone creates a connection between both repositories, while git pull requires a connection to be made before it can work.
+
+
