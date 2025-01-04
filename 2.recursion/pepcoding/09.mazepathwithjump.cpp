@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-vector<string> printpath(int sr,int sc,int dr,int dc)
+vector<string> getpathjumps(int sr,int sc,int dr,int dc)
 {
 
 	if(dr==sr && sc==dc)
@@ -18,26 +18,48 @@ vector<string> printpath(int sr,int sc,int dr,int dc)
 
 	for(int i=1;i<=dc-sc;i++)
 	{
-		right=printpath(sr,sc+i,dr,dc);
+		right=getpathjumps(sr,sc+i,dr,dc);
 		for(auto &val:right)
-			ans.push_back("r"+char(i)+val);
+			ans.push_back("r"+to_string(i)+val);
 	}
 
 	for(int i=1;i<=dr-sr;i++)
 	{
-		right=printpath(sr+i,sc,dr,dc);
+		right=getpathjumps(sr+i,sc,dr,dc);
 		for(auto &val:right)
-			ans.push_back("d"+i+val);
+			ans.push_back("d"+to_string(i)+val);
 	}
 
 	for(int i=1;i<=dr-sr && i<=dc-sc;i++)
 	{
-		diag=printpath(sr+1,sc+1,dr,dc);
+		diag=getpathjumps(sr+i,sc+i,dr,dc);
 		for(auto &val:diag)
-			ans.push_back("d"+i+val);
+			ans.push_back("D"+to_string(i)+val);
 	}
 
 	return ans;
+}
+
+void printpathjumps(int r,int c,int dr,int dc,string s)
+{
+
+	if(r==dr && c==dc)
+	{
+		cout<<s<<" ";
+		return;
+	}
+	else if(r>dr || c>dc)
+		return;
+
+	for(int i=1;i<=dc-c;i++)
+		printpathjumps(r,c+i,dr,dc,"r"+to_string(i)+s);
+
+	for(int i=1;i<=dr-r;i++)
+		printpathjumps(r+i,c,dr,dc,"d"+to_string(i)+s);
+
+	for(int i=1;i<=dc-c && i<=dr-r;i++)
+		printpathjumps(r+i,c+i,dr,dc,"D"+to_string(i)+s);
+
 }
 
 int main()
@@ -45,11 +67,13 @@ int main()
 	int m,n;
 	cin>>m>>n;
 
-	vector<string> v=printpath(0,0,m-1,n-1);
-	for(auto &val:v)
-		cout<<val<<" ";
-	cout<<endl;
-	cout<<v.size();
+	// vector<string> v=getpathjumps(1,1,m,n);
+	printpathjumps(1,1,m,n,"");
+	// for(auto &val:v)
+	// 	cout<<val<<" ";
+	// cout<<endl;
+	// cout<<v.size();
 
 	return 0;
 }
+

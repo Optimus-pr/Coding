@@ -7,14 +7,7 @@ bool cmp(string &a,string &b)//in cmp when returning true or false return the op
     string first=a+b;
     string second=b+a;
     
-    // for(int i=0;i<first.size();i++)
-    // {
-    //     if(first[i]<second[i])
-    //         return false;
-    //     if(first[i]>second[i])
-    //         return true;
-    // }
-    // return false;
+   
     return first<second;
 }
 
