@@ -1,3 +1,6 @@
+//here we will keep just a single variable that we will update when we push and pop new element i.e assume stack contains 5 so that is the only min ele so min=5 but when we try to push 3 we will not push 3 instead we push 2*3-1 and update min as 3...
+//now while poping we check if s.top()<mn which acts as a flag i.e min is at the top of the stack so before poping update min=2*min-s.top() and then do s.pop()
+
 #include<bits/stdc++.h>
 using namespace std;
 

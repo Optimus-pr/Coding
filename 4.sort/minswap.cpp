@@ -20,7 +20,7 @@ int minswap(vector<int> a,vector<int> b,int n)
 			vis.insert(a[i]);
 			temp.insert(a[i]);
 			int ele=a[m[a[i]]];
-			while(temp.find(ele)==temp.end())
+			while(temp.find(ele)==temp.end())//did vis.find()
 			{
 				vis.insert(ele);
 				temp.insert(ele);
@@ -29,7 +29,7 @@ int minswap(vector<int> a,vector<int> b,int n)
 			cnt+=(temp.size()-1);
 			temp.clear();
 		}
-		else if(m[a[i]]==i)
+		else if(m[a[i]]==i)//did only else
 			vis.insert(a[i]);
 	}
 	return cnt;
