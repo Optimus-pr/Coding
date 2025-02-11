@@ -33,7 +33,7 @@ int main()
             s.push(v[i]);
         else
         {
-            s.push(2*v[i]-mn);
+            s.push(2*v[i]-mn);//remeber example as 5 3 when 3 comes 1 will be pushed to stack updating min as 3 while poping 1 which is stack top will be small then min so recompute the min value from the variable and stack top
             mn=v[i];
         }
     }

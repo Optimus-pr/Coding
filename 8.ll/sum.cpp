@@ -80,7 +80,7 @@ node * Sum(node * n1,node *n2)
 		insertrear(n3,sum);
 		carry=(n2->data+carry)/10;
 		n2=n2->next;
-	}
+	}hist
 	if(carry)
 		insertrear(n3,carry);
 

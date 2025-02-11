@@ -54,7 +54,7 @@ void delnod(node * &head,int pos)
 		{
 			node *d=t->next;
 			head=head->next;
-			t->next=head->next;
+			t->next=head;
 			delete d;
 		}
 		else
