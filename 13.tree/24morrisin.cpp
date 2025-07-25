@@ -145,6 +145,39 @@ void morrispre(node *head)
 	cout<<endl;
 }
 
+vector<int> morrispostOrder(Node* node) {
+        // code here
+        vector<int> ans;
+        
+        while(node)
+        {
+            if(node->right==0)
+            {
+                ans.push_back(node->data);
+                node=node->left;
+            }
+            else
+            {
+                Node * t=node->right;
+                while(t->left && t->left!=node)
+                    t=t->left;
+                if(t->left==0)
+                {
+                    t->left=node;
+                    ans.push_back(node->data);
+                    node=node->right;
+                }
+                else
+                {
+                    node=node->left;
+                    t->left=0;
+                }
+            }
+        }
+        reverse(ans.begin(),ans.end());
+        return ans;
+    }
+
 
 int main()
 {

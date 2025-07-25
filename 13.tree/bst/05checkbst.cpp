@@ -66,6 +66,23 @@ bool check(node * head,int l,int r)
 	return check(head->llink,l,head->data)&& check(head->rlink,head->data,r);
 }
 
+int mn=INT_MIN;
+bool isBST(Node* root) {
+    // Your code here
+    if(root==0)
+        return true;
+    bool l= isBST(root->left);
+    if(l==false)
+        return false;
+    if(root->data>mn)
+    {
+        mn=root->data;
+    }
+    else
+        return false;
+    return isBST(root->right);
+}	
+
 int main()
 {
 	node *head=levelbuild();

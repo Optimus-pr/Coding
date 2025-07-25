@@ -3,39 +3,32 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void printmax(int *a,int n)
-{
-	int i=0,j=0,mx=-999;
+vector<int> maxOfSubarrays(vector<int>& a, int k) {
+        // code here
+        vector<int> ans;
+        int i=0,j=0,n=a.size();
 	deque<int> q;
 
 	while(j<n)
 	{
-		if(mx<a[j])
-		{
-			while(!q.empty())
-				q.pop_front();
-			mx=a[j];
-			q.push_front(a[j]);//we can use q.push() as there will be only element at that stage no need to use deque only queue is enough
-		}
-		else
-			q.push_back(a[j]);
+		while(!q.empty() && q.back()<a[j])
+		    q.pop_back();
+		q.push_back(a[j]);
 
-		if(j-i+1<3)
+		if(j-i+1<k)
 			j++;
-		else if(j-i+1==3)
+		else if(j-i+1==k)
 		{
-			cout<<q.front()<<" ";
-			if(a[i]==mx)
+			ans.push_back(q.front());
+			if(a[i]==q.front())
 				q.pop_front();
-			if(!q.empty())
-				mx=q.front();
-			else 
-				mx=-999;
 			i++;
 			j++;
 		}
 	}
-}
+        return ans;
+        
+    }
 
 int main()
 {

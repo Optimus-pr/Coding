@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-vector<string> printpath(int sr,int sc,int dr,int dc)
+vector<string> getpath(int sr,int sc,int dr,int dc)
 {
 
 	if(dr==sr && sc==dc)
@@ -16,10 +16,10 @@ vector<string> printpath(int sr,int sc,int dr,int dc)
 	vector<string> ans;
 
 	if(sc<dc)
-		right=printpath(sr,sc+1,dr,dc);
+		right=getpath(sr,sc+1,dr,dc);
 
 	if(sr<dr)
-		down=printpath(sr+1,sc,dr,dc);
+		down=getpath(sr+1,sc,dr,dc);
 
 	for(auto &val:right)
 		ans.push_back("r"+val);
@@ -30,7 +30,7 @@ vector<string> printpath(int sr,int sc,int dr,int dc)
 	return ans;
 }
 
-void getpath(int sr,int sc,int dr,int dc,string tmp)
+void printpath(int sr,int sc,int dr,int dc,string tmp)
 {
 	if(sr>=dr || sc>=dc)
 		return;
@@ -39,8 +39,8 @@ void getpath(int sr,int sc,int dr,int dc,string tmp)
 		cout<<tmp<<" ";
 		return;
 	}
-	getpath(sr+1,sc,dr,dc,"d"+tmp);
-	getpath(sr,sc+1,dr,dc,"r"+tmp);
+	printpath(sr+1,sc,dr,dc,"d"+tmp);
+	printpath(sr,sc+1,dr,dc,"r"+tmp);
 }
 
 int main()

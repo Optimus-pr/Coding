@@ -46,3 +46,33 @@ int main()
     }
     return 0;
 }
+
+
+//or else we can follow another easy approach also i.e only used to give the min at the moment not to print the top 
+
+//while pushing only we push the smallest till now by comparing with the top element 
+stack<int> _push(int arr[], int n) {
+    // your code here
+    stack<int> s;
+    if(n==0)
+        return s;
+    s.push(arr[0]);
+    for(int i=1;i<n;i++)
+    {
+        if(arr[i]<s.top())
+            s.push(arr[i]);
+        else
+            s.push(s.top());
+    }
+    
+}
+
+// Function to print minimum value in stack each time while popping.
+void _getMinAtPop(stack<int> s) {
+    while(!s.empty())
+    {
+        cout<<s.top()<<" ";
+        s.pop();
+    }
+    // your code here
+}

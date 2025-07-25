@@ -1,5 +1,7 @@
 //when the given key is sub by any of the ele present in the array then we will get min abs diff if the key is not present in the array then either ele before the key will be the answer or ele next to the key will be the answer
 
+
+//this sol will give runtime error for [1,3,5,6], target = 7 check why
 #include<iostream>
 
 using namespace std;

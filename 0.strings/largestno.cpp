@@ -1,14 +1,16 @@
 //here we are given with an vec<string> we need to arrange those ele such that no formed should be maximum i.e 1,30,5,9,3=>953301
-#include<bits/stdc++.h>
+#include<iostream>
+#include<vector>
+#include<string>
 using namespace std;
 
-bool cmp(string &a,string &b)//in cmp when returning true or false return the opposite of what is desired i.e if you want to return true then return false
+bool cmp(string &a,string &b)
 {
     string first=a+b;
     string second=b+a;
     
    
-    return first<second;
+    return first>second;
 }
 
 int main(){

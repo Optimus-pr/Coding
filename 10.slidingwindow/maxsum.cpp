@@ -1,4 +1,4 @@
-//the aim is to find the max subarray sum where the sub array can contain only 3 elements;
+celeee//the aim is to find the max subarray sum where the sub array can contain only 3 elements;
 #include<bits/stdc++.h>
 using namespace std;
 

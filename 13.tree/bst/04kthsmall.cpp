@@ -72,6 +72,21 @@ int kthlarg(node * head,int &cnt)
 	return kthlarg(head->llink,cnt);
 }
 
+//we can use this approach also i.e call this fun which will have the value updated in the variable so return that variable
+void fun(Node * root,int &sum,int &k)
+{
+    if(root==0)
+        return;
+    fun(root->right,sum,k);
+    if(--k==0){
+        sum=root->data;
+        return;
+   	}	
+    else if(k<0)
+        return;
+    fun(root->left,sum,k);
+}
+
 int main()
 {
 	int a[]={1,2,3,4,5,6};

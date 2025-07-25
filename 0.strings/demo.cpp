@@ -9,7 +9,7 @@ int main()
 		string s;
 		getline(cin,s);
 		v.push_back(s);
-
+ 
 	}
 
 	int cnt;

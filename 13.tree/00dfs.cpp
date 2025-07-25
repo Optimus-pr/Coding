@@ -133,9 +133,6 @@ vector<int> iterpost(node *root)
 			temp=s.top()->rlink;
 			if(temp==NULL)
 			{
-				temp=s.top();
-				s.pop();
-				p.push_back(temp->data);
 				while(!s.empty() && temp==s.top()->rlink)
 				{
 					temp=s.top();
@@ -149,6 +146,49 @@ vector<int> iterpost(node *root)
 	}
 	return p;
 }
+//here LRN is the postorder but we do NRL here and reverse the ans since we need R first in the stack we need to insert L first 
+vector<int> iterpostOrder(Node* node) {
+        // code here
+        vector<int> v;
+        stack<Node *> s;
+        s.push(node);
+        
+        while(!s.empty())
+        {
+            Node *t=s.top();
+            v.push_back(t->data);
+            s.pop();
+            
+            if(t->left)
+                s.push(t->left);
+            if(t->right)    
+                s.push(t->right);
+        }
+        reverse(v.begin(),v.end());
+        return v;
+}
+
+//the same approach as above in preorder we need NLR since we need L first we need to put R first in stack because it LIFO
+vector<int> preOrder(Node* node) {
+        // code here
+        vector<int> v;
+        stack<Node *> s;
+        s.push(node);
+        
+        while(!s.empty())
+        {
+            Node *t=s.top();
+            v.push_back(t->data);
+            s.pop();
+
+            if(t->right)    
+                s.push(t->right);
+
+            if(t->left)
+                s.push(t->left);
+        }
+        return v;
+    }
 
 bool isleaf(node *root)
 {
@@ -197,3 +237,5 @@ int main()
 
 	return 0;
 }
+40, 30, 35, 20, 80, 100
+80,max

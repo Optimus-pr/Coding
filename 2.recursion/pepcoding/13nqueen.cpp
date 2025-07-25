@@ -48,7 +48,7 @@ void nqueen(vector<vector<int> > &c,int i,vector<int> &col,vector<int> &diag,vec
 
 	for(int j=0;j<c.size();j++)
 	{
-		if(col[j]==0 && diag[i+j]==0 && rdiag[i-j+c.size()-1]==0)
+		if(col[j]==0 && diag[i+j]==0 && rdiag[i-j+c.size()-1]==0)//rdiag[j-i+c.size()] would also do
 		{
 			c[i][j]=1;
 			col[j]=1;

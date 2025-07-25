@@ -54,6 +54,8 @@ node * buildtree(vector<int> in,int is,int ie,vector<int> pre,int ps,int pe,unor
 
 	int inRoot=m[head->data];
 	int numsLeft=inRoot-is;
+	//here first we find 3 element there to the left of the elem  in inorder then the first 3 element nxt to preorders first element will be the preorder for the left sub tree and remaining element will be the preorder for the right subtree
+	//similary if we find 3 element to the left of inorder then 3 element from the start of postorder will be postorder for the left subtree and remaining till last but one will be postorder for the right subtree
 	head->llink=buildtree(in,is,inRoot-1,pre,ps+1,ps+numsLeft,m);//ps,ps+numsleft-1
 	head->rlink=buildtree(in,inRoot+1,ie,pre,ps+numsLeft+1,pe,m);//ps+numsleft,pe-1
 

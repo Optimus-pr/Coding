@@ -1,3 +1,12 @@
+// insertion o(n)
+// delettion o(n)
+// search o(n)
+// creation
+// 	a.array given 
+// 		so sort it nlogn then create o(n)
+// 	b.runtim
+// 		o(n2)
+
 #include<bits/stdc++.h>
 using namespace std;
 

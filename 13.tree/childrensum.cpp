@@ -127,7 +127,7 @@ int main()
 	else
 	{
 		makeChild(head);
-		display(head);
-	}
+		display(head)
+			}
 	return 0;
 }
