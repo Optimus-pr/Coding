@@ -1,0 +1,20 @@
+2d array are also stored in memory in the form of 1d array only using 
+
+a)row major order
+i.e if we know the ri and ci , row and col then index=ri*col+ci
+
+like wise if we are give the index and asked to find ri and ci
+ri=index/col
+ci=index%col
+
+when we pass a two d array to a function we take it as fun(a[][4]) here col size is must because when we do a[2][3]
+=base_adr+(2*col+3)*size_of_elem but if col is not passed in arg it will not be able to figure it out so.. 
+
+by default row major order will be followed but where col major order will be used then
+
+it depends on the type of database we need to design say there is a db with attr (balanace,accid,date) and our application involves computing balance of each users frequently and there are billions of entry so at that time if we store this in col major form all the like entries will be present in the same location 
+
+
+but in case of user detail if (username,email,passwd) this is the attribute then when username is found the correspoding email, passwd access will be easy if it is stored in row major form or else we need to find some thing else to find where the email or passwd corresponding to these entries exists in the database
+
+but in case of 2d vector there is no need to share the col because it is not guranteed that the vectors are stored in contiguos manner 1d vector inside the 2d is present in contiguos way but it is not guarnteed bout the rest of the vectors since each vector have the ptr to its inner vector that will be used to compute the value

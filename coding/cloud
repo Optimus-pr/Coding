@@ -1,0 +1,119 @@
+			Cloud computing
+
+Cloud computing is a model of delivering computing services over the internet, providing on-demand access to shared resources such as computing power, storage, and applications. Rather than relying on a local server or a personal computer to store and process data, cloud computing allows users to access and use computing resources through a cloud service provider.
+
+Cloud computing is based on the principle of virtualization, where physical computing resources are abstracted and made available to users in a scalable and flexible manner. 
+
+
+		3 service models
+
+Infrastructure as a Service (IaaS):
+IaaS provides virtualized computing resources over the internet, including servers, storage, and networking infrastructure. With IaaS, the cloud provider is responsible for managing the underlying hardware and infrastructure, while the user is responsible for managing the operating system, middleware, applications, and data.
+Examples of IaaS providers include Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform.
+
+Platform as a Service (PaaS):
+PaaS provides a complete platform for developing, testing, and deploying web applications over the internet. The cloud provider manages the underlying infrastructure, including the operating system, middleware, and runtime environment, while the user is responsible for managing the application and data.
+Examples of PaaS providers include Heroku, Google App Engine, and Microsoft Azure App Service.
+
+Software as a Service (SaaS):
+SaaS provides access to software applications over the internet on a subscription basis. The cloud provider manages the infrastructure, platform, and software, while the user only needs to access the software through a web browser or application interface.
+Examples of SaaS providers include Salesforce, Microsoft Office 365, and Dropbox.
+
+
+					Deployment models
+
+Public cloud:
+A public cloud is a cloud computing model in which the cloud provider makes computing resources, such as servers, storage, and applications, available to the general public over the internet. In this deployment model, the cloud provider is responsible for managing and maintaining the infrastructure, platform, and software, while the user accesses the resources through a web browser or API.
+Examples of public cloud providers include Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform.
+
+Private cloud:
+A private cloud is a cloud computing model in which the computing resources are dedicated to a single organization or company, and the cloud infrastructure is managed by that organization's IT department or a third-party provider. In this deployment model, the user has more control over the security, performance, and customization of the cloud environment.
+Examples of private cloud providers include VMware, IBM Cloud, and Dell EMC.
+
+Hybrid cloud:
+A hybrid cloud is a cloud computing model that combines elements of both public and private clouds, allowing organizations to take advantage of the benefits of both deployment models. In this deployment model, the user can use both on-premises infrastructure and public cloud infrastructure to meet their computing needs, with data and applications shared between the two environments.
+Examples of hybrid cloud providers include AWS Outposts, Azure Stack, and Google Anthos.
+
+Multi-cloud:
+A multi-cloud is a cloud computing model in which an organization uses more than one cloud provider to meet their computing needs. In this deployment model, the user can choose the best cloud provider for each application or workload, and can avoid vendor lock-in by using multiple providers.
+Examples of multi-cloud providers include AWS, Azure, and Google Cloud Platform.
+
+
+					benifits of cloud computing
+
+
+Scalability: Cloud computing allows organizations to quickly and easily scale their computing resources up or down as their needs change, without having to invest in additional hardware or infrastructure.
+
+Cost savings: Cloud computing can help organizations save money on IT costs, as they only pay for the resources they use and do not have to invest in and maintain their own hardware and infrastructure.
+
+Flexibility: Cloud computing allows users to access their applications and data from anywhere with an internet connection, making it easier for employees to work remotely or from different locations.
+
+Reliability: Cloud providers typically offer high levels of uptime and availability, ensuring that applications and data are always accessible.
+
+Security: Cloud providers typically offer robust security measures, including data encryption, access controls, and threat detection, to help protect against cyberattacks and data breaches.
+
+Collaboration: Cloud computing makes it easier for teams to collaborate on projects and share resources, as data and applications can be accessed from anywhere with an internet connection.
+
+Innovation: Cloud computing allows organizations to quickly adopt new technologies and applications, enabling faster innovation and time-to-market.
+
+
+						charactericstics of cloud computing
+
+
+On-demand self-service: Cloud computing allows users to provision computing resources, such as processing power, storage, and network bandwidth, as needed without having to go through a formal request process.
+
+Broad network access: Cloud computing services are typically accessible over the internet from any device with a network connection, enabling users to access their applications and data from anywhere.
+
+Resource pooling: Cloud providers use a shared infrastructure to serve multiple customers, allowing them to pool computing resources and optimize their usage.
+
+Rapid elasticity: Cloud computing allows users to quickly and easily scale their computing resources up or down as their needs change, without having to make major infrastructure investments.
+
+Measured service: Cloud providers typically charge users based on their usage of computing resources, such as the amount of storage, processing power, or network bandwidth used.
+
+Resilience and redundancy: Cloud providers typically offer high levels of redundancy and resilience, with multiple data centers and backup systems to ensure high availability of services.
+
+Multi-tenancy: Cloud providers typically serve multiple customers from a shared infrastructure, allowing users to share resources and benefit from economies of scale.
+
+
+							hadoop
+
+
+Hadoop is an open-source software framework used to store and process large sets of data, known as big data, across distributed computing clusters. It was initially developed by the Apache Software Foundation and is now widely used by organizations around the world.it mainly conc on distributed processing and storing
+
+Hadoop consists of several core components, including:
+
+Hadoop Distributed File System (HDFS): HDFS is a distributed file system that stores large data sets across multiple servers and provides high-throughput access to the data.(distributed storage)
+
+MapReduce: MapReduce is a programming model and software framework for processing large data sets in parallel across a distributed computing cluster.(distributed processing)
+
+YARN: yet another resoource negotiator job scheduling,resource mangagment 
+
+Hadoop Common: Hadoop Common provides libraries and utilities used by other Hadoop components
+
+Hadoop is commonly used in big data applications, such as data warehousing, log processing, and machine learning, among others. It provides a scalable and cost-effective way to store and process large data sets, enabling organizations to gain valuable insights from their data.
+
+
+
+							VIRTUALIZATION
+
+processor,ram,rom,networking componets these things combine to form a local system too many of these will form a server this server can be fed with hyperviser(vmm) which helps in createing virtual maching on the base server which can be contacted by any person
+
+Cloud providers use virtualization to create on-demand computing resources that can be quickly provisioned and scaled to meet user demand.
+
+ 							AWS
+it is a secure cloud platfomr
+benifts:
+flexibility,cost effective,scalable,security
+
+	Aws gloabl infrastructure
+
+	region->availability zone->datacentre  these region are isolated from each other so as to be fault tolerant
+
+	in the world there are 21 region and 61 availabilty zones are there in india there is 1 region in mumbai and 1 regino in delhi which contains two availablity zone all these regions are survivlanced
+
+
+services provided:
+
+	*)Amazon Elastic Compute Cloud (EC2): A scalable and flexible compute service that enables users to launch virtual machines on demand.
+
+	*)Amazon Simple Storage Service (S3): A scalable object storage service that provides secure and durable storage for any type of data.
